@@ -1,0 +1,80 @@
+Movie Recommendation System
+A content-based movie recommendation system built with Python, FastAPI, Pandas, Scikit-learn, and TF-IDF.
+The system recommends movies that are similar to a movie provided by the user. It analyzes movie information such as genres, keywords, tagline, cast, and director, converts these features into numerical vectors using TF-IDF, and calculates similarity between movies using cosine similarity.
+The recommendation engine is exposed through a REST API using FastAPI.
+Features
+🎬 Content-based movie recommendations
+🔎 Approximate movie-title matching using difflib
+🧠 TF-IDF based feature extraction
+📊 Cosine similarity for finding similar movies
+⚡ FastAPI REST API
+🌐 CORS enabled for frontend integration
+🐼 Pandas-based data preprocessing
+📦 JSON API responses
+🔄 Returns up to 29 similar movies for a selected movie
+
+🛠️ Technologies Used
+Technology || Purpose
+Python - Core programming language
+FastAPI	- REST API framework
+Pandas	- Dataset loading and preprocessing
+Scikit-learn	- TF-IDF and cosine similarity
+Pydantic -	API request validation
+difflib	- Fuzzy movie-title matching
+Uvicorn	- ASGI server
+How the Recommendation System Works
+
+This project uses a content-based filtering approach.
+
+Instead of recommending movies based on what other users watched, the system compares the characteristics of movies.
+Recommendation Pipeline
+                 Movie Dataset
+                       │
+                       ▼
+              Data Preprocessing
+                       │
+                       ▼
+       ┌──────────────────────────────┐
+       │ Selected Movie Features      │
+       │                              │
+       │ • Genres                     │
+       │ • Keywords                   │
+       │ • Tagline                    │
+       │ • Cast                       │
+       │ • Director                   │
+       └──────────────────────────────┘
+                       │
+                       ▼
+             Combine All Features
+                       │
+                       ▼
+             TF-IDF Vectorization
+                       │
+                       ▼
+             Feature Vectors
+                       │
+                       ▼
+            Cosine Similarity
+                       │
+                       ▼
+              Similarity Ranking
+                       │
+                       ▼
+          Top Movie Recommendations
+Dataset
+
+The application expects a CSV file named:
+(movies.csv)
+The dataset should contain columns similar to:
+index
+title
+genres
+keywords
+tagline
+cast
+director
+
+Future Improvements
+Add a web interface
+Add movie posters
+Add ratings
